@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All in one</title>
+    <link rel="shortcut icon" href="images/world.png" type="image/x-icon">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- css external file  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">All In One</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a onclick="displayCountries()" class="nav-link px-4" href="#">Covid-19</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="displayCountry()" class="nav-link px-4" href="#">Countries</a>
+                        </li>
+                        <li class="nav-item">
+                            <a onclick="weatherDetails()" class="nav-link px-4" href="#">Weather</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-4" href="#subscribe">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="carousel-banner">
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner carousel-top">
+                        <div class="carousel-item active">
+                            <div class="row d-flex align-items-center p-5">
+                                <div class="col-md-8">
+                                    <h1>Corona Virus
+                                    </h1><br>
+                                    <p>Check current updates od covid-19 cases in the world.
+                                    </p><br>
+                                    <button onclick="displayCountries()" class="btn btn-warning"> Covid-19</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/covid.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row d-flex align-items-center p-5">
+                                <div class="col-md-8">
+                                    <h1>Countries Information
+                                    </h1><br>
+                                    <p>Check any countries information here.
+                                    </p><br>
+                                    <button onclick="displayCountry()" class="btn btn-warning">Countries</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/earth.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row d-flex align-items-center p-5">
+                                <div class="col-md-8">
+                                    <h1>Weather
+                                    </h1><br>
+                                    <p>Check current weather for any country's city.
+                                    </p><br>
+                                    <button onclick="weatherDetails()" class="btn btn-warning">Weather</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/weather.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row d-flex align-items-center p-5">
+                                <div class="col-md-8">
+                                    <h1>Panda
+                                    </h1><br>
+                                    <p>Buy anythings you want.
+                                    </p><br>
+                                    <button class="btn btn-warning"><img id="cart-img" src="images/shopping-cart 1.png"
+                                            alt="">Buy</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/ecommerce.png" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev carousel-button" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next carousel-button" type="button"
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section id="countriesInfo">
+            <div class="container mt-5">
+                <h1 class="text-center">Basic information of every country</h1>
+                <div id="countries"></div>
+            </div>
+        </section>
+        <section id="covidInfo">
+            <div class="container mt-5">
+                <h1 class="text-center">Corona Virus Cases</h1>
+                <div id="countries-covid"></div>
+            </div>
+        </section>
+        <section id="weather">
+            <div class="container mt-5">
+                <div class="search-bar col-md-6 mx-auto">
+                    <h1 class="text-center">Check Weather</h1>
+                    <div class="search-box my-5">
+                        <input id="city" type="text" class="form-control" placeholder="Enter your artist song name">
+                        <button id="search-button" onclick="weather()" class="btn btn-success search-btn">Search</button>
+                    </div>
+                </div>
+                <div class="weather-status text-white text-center">
+                    <img id="icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+                    <h1 id="show_city">Dhaka</h1>
+                    <h3><span id="show_temperature"></span>&deg;C</h3>
+                    <h1 id="weather_status" class="lead">Rain</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <br><br><br><br><br>
+    <!-- JavaScript external file -->
+    <script src="app.js"></script>
+    <!-- JavaScript bootstrap file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
